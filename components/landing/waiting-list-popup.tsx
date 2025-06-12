@@ -1,13 +1,11 @@
 "use client"
 
 import React from "react"
-
 import { useState } from "react"
-import { AlertCircle, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 
 interface WaitingListPopupProps {
@@ -116,7 +114,6 @@ export function WaitingListPopup({ isOpen, onClose }: WaitingListPopupProps) {
         {isSuccess ? (
           <div className="space-y-4">
             <Alert className="bg-green-50 border-green-200">
-              <CheckCircle2 className="h-4 w-4 text-green-600" />
               <AlertDescription className="text-green-800">
                 <strong>You're on the list!</strong> We'll email you at <span className="font-medium">{email}</span>{" "}
                 when Threadbase is ready.
@@ -126,7 +123,7 @@ export function WaitingListPopup({ isOpen, onClose }: WaitingListPopupProps) {
               <Button onClick={handleClose} variant="outline" className="flex-1">
                 Close
               </Button>
-              <Button onClick={handleTryAgain} className="flex-1">
+              <Button onClick={handleTryAgain} className="flex-1 bg-black text-white hover:bg-black/90">
                 Add Another
               </Button>
             </div>
@@ -135,7 +132,6 @@ export function WaitingListPopup({ isOpen, onClose }: WaitingListPopupProps) {
           <form onSubmit={handleSubmit} className="space-y-4">
             {error && (
               <Alert variant="destructive">
-                <AlertCircle className="h-4 w-4" />
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
             )}
@@ -199,7 +195,7 @@ export function WaitingListPopup({ isOpen, onClose }: WaitingListPopupProps) {
               <Button type="button" variant="outline" onClick={handleClose} className="flex-1" disabled={isLoading}>
                 Cancel
               </Button>
-              <Button type="submit" className="flex-1" disabled={isLoading}>
+              <Button type="submit" className="flex-1 bg-black text-white hover:bg-black/90" disabled={isLoading}>
                 {isLoading ? "Joining..." : "Join Waiting List"}
               </Button>
             </div>
