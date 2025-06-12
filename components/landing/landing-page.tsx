@@ -58,11 +58,10 @@ export function LandingPage() {
       <section className="flex-1 flex flex-col items-center justify-center px-4 py-20 md:py-24 bg-gradient-to-b from-background to-muted/30">
         <div className="container max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-            Track, debug, and version what your AI Agent remembers
+            MemoryOps for AI Agents
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Threadbase gives developers deep visibility on what AI Agent remembers, how it changes, and why it behaves
-            the way it does.
+            Threadbase gives you full visibility into what your agent remembers, how memory evolves, and why it fails — so you can debug and fix faster.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
